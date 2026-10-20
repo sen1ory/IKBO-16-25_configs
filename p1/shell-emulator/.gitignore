@@ -1,0 +1,10 @@
+# python bytecode and caches
+__pycache__/
+*.pyc
+
+# test caches
+.pytest_cache/
+
+# virtual environments
+venv/
+.venv/
