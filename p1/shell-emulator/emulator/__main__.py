@@ -2,6 +2,7 @@ import argparse
 import sys
 
 from . import repl
+from .script import run_script
 
 
 def parse_args(argv=None):
@@ -25,6 +26,21 @@ def main(argv=None):
     args = parse_args(argv)
     print_debug(args)
     ctx = repl.Context()
+
+    # a script that ends the shell (exit or error) skips the interactive loop
+    if args.startup_script:
+        try:
+            code = run_script(args.startup_script, ctx)
+        except OSError as e:
+            print(f"emulator: cannot read '{args.startup_script}': "
+                  f"{e.strerror}")
+            return 1
+        except UnicodeDecodeError:
+            print(f"emulator: '{args.startup_script}' is not valid UTF-8")
+            return 1
+        if code is not None:
+            return code
+
     return repl.run(ctx)
 
 
