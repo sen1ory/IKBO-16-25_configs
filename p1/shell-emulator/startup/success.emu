@@ -1,0 +1,5 @@
+# runs cleanly, then falls through to the interactive prompt
+ls
+ls -l /tmp
+cd $HOME
+ls
