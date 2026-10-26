@@ -1,0 +1,5 @@
+# exit ends the shell with code 3, so the last line never runs
+ls -l
+cd /
+exit 3
+ls
