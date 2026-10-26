@@ -1,0 +1,6 @@
+# the error on line 5 stops the script, so line 6 never runs
+ls
+cd /tmp
+ls -l
+foo
+ls
