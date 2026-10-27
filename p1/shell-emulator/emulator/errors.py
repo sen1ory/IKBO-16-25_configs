@@ -10,6 +10,10 @@ class CommandError(ShellError):
     pass
 
 
+class VFSError(ShellError):
+    """A lookup in the VFS failed. The message has no command prefix."""
+
+
 class ExitShell(Exception):
     """Raised by the exit command to stop the emulator."""
 
