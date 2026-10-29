@@ -3,7 +3,7 @@ from .commands import dispatch
 from .errors import ExitShell, ShellError
 
 
-# repl (read evaluate parse looop) and state handling
+# repl (read evaluate print loop) and state handling
 
 
 class Context:
