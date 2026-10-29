@@ -1,6 +1,9 @@
+from datetime import datetime
+
 from .parser import parse
 from .commands import dispatch
 from .errors import ExitShell, ShellError
+from .vfs import DirNode, VFS
 
 
 # repl (read evaluate print loop) and state handling
@@ -9,12 +12,16 @@ from .errors import ExitShell, ShellError
 class Context:
     """State shared by all commands."""
 
-    def __init__(self, vfs_name="vfs"):
-        self.vfs_name = vfs_name
+    def __init__(self, vfs=None):
+        # without a VFS file the shell starts with an empty root
+        if vfs is None:
+            root = DirNode("", "root", "root", "rwxr-xr-x", datetime.now())
+            vfs = VFS("vfs", root)
+        self.vfs = vfs
         self.cwd = "/"
 
     def prompt(self):
-        return f"{self.vfs_name}:{self.cwd}$ "
+        return f"{self.vfs.name}:{self.cwd}$ "
 
 
 def execute(line, ctx):
