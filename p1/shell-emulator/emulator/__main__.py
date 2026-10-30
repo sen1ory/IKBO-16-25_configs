@@ -2,6 +2,8 @@ import argparse
 import sys
 
 from . import repl
+from .errors import VFSError
+from .loader import load_vfs
 from .script import run_script
 
 
@@ -27,13 +29,20 @@ def main(argv=None):
     print_debug(args)
     ctx = repl.Context()
 
+    if args.vfs_path:
+        try:
+            ctx.vfs = load_vfs(args.vfs_path)
+        except VFSError as e:
+            print(f"emulator: {e}")
+            return 1
+
     # a script that ends the shell (exit or error) skips the interactive loop
     if args.startup_script:
         try:
             code = run_script(args.startup_script, ctx)
         except OSError as e:
-            print(f"emulator: cannot read '{args.startup_script}': "
-                  f"{e.strerror}")
+            print(f"emulator: cannot read "
+                  f"'{args.startup_script}': {e.strerror}")
             return 1
         except UnicodeDecodeError:
             print(f"emulator: '{args.startup_script}' is not valid UTF-8")
