@@ -1,0 +1,19 @@
+{
+  "name": "broken",
+  "root": {
+    "type": "dir",
+    "owner": "root",
+    "group": "root",
+    "mtime": "2024-01-01T00:00:00",
+    "children": {
+      "logo.png": {
+        "type": "file",
+        "owner": "user",
+        "group": "user",
+        "mtime": "2024-01-03T12:00:00",
+        "encoding": "base64",
+        "content": "not-valid-base64!!"
+      }
+    }
+  }
+}

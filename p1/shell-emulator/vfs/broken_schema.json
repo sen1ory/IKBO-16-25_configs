@@ -1,0 +1,17 @@
+{
+  "name": "broken",
+  "root": {
+    "type": "dir",
+    "owner": "root",
+    "group": "root",
+    "mtime": "2024-01-01T00:00:00",
+    "children": {
+      "weird": {
+        "type": "link",
+        "owner": "root",
+        "group": "root",
+        "mtime": "2024-01-02T10:00:00"
+      }
+    }
+  }
+}
