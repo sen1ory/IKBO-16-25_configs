@@ -1,0 +1,75 @@
+{
+  "name": "deep",
+  "root": {
+    "type": "dir",
+    "owner": "root",
+    "group": "root",
+    "mode": "rwxr-xr-x",
+    "mtime": "2024-01-01T00:00:00",
+    "children": {
+      "etc": {
+        "type": "dir",
+        "owner": "root",
+        "group": "root",
+        "mode": "rwxr-xr-x",
+        "mtime": "2024-01-02T09:00:00",
+        "children": {
+          "app": {
+            "type": "dir",
+            "owner": "root",
+            "group": "root",
+            "mode": "rwxr-xr-x",
+            "mtime": "2024-01-02T09:10:00",
+            "children": {
+              "app.conf": {
+                "type": "file",
+                "owner": "root",
+                "group": "root",
+                "mode": "rw-r--r--",
+                "mtime": "2024-01-02T09:20:00",
+                "encoding": "text",
+                "content": "port=8080\ndebug=false\n"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "type": "dir",
+        "owner": "root",
+        "group": "root",
+        "mode": "rwxr-xr-x",
+        "mtime": "2024-01-02T09:00:00",
+        "children": {
+          "user": {
+            "type": "dir",
+            "owner": "user",
+            "group": "user",
+            "mode": "rwxr-xr-x",
+            "mtime": "2024-01-02T09:30:00",
+            "children": {
+              "projects": {
+                "type": "dir",
+                "owner": "user",
+                "group": "user",
+                "mode": "rwxr-xr-x",
+                "mtime": "2024-01-02T09:40:00",
+                "children": {
+                  "notes.txt": {
+                    "type": "file",
+                    "owner": "user",
+                    "group": "user",
+                    "mode": "rw-r--r--",
+                    "mtime": "2024-01-02T09:50:00",
+                    "encoding": "text",
+                    "content": "Level four: a file in a nested directory.\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
