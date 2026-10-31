@@ -25,7 +25,7 @@ def parse_args(argv=None):
 def print_debug(args):
     if args.debug:
         print(f"[DEBUG] vfs_path       = {args.vfs_path or '(not set)'}")
-        print(f"[EBUG] startup_script = {args.startup_script or '(not set)'}")
+        print(f"[DEBUG] startup_script = {args.startup_script or '(not set)'}")
 
 
 def main(argv=None):
