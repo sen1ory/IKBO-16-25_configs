@@ -17,6 +17,7 @@ def parse_args(argv=None):
     parser.add_argument("--startup-script",
                         help="script to run before the prompt")
     parser.add_argument("--debug",
+                        action="store_true",
                         help="print debug info")
     return parser.parse_args(argv)
 
