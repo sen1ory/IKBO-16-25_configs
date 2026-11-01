@@ -12,11 +12,11 @@ def parse_args(argv=None):
         prog="emulator",
         description="Shell emulator with a virtual file system.",
     )
-    parser.add_argument("--vfs-path",
+    parser.add_argument("-v", "--vfs-path",
                         help="path to the VFS JSON file")
-    parser.add_argument("--startup-script",
+    parser.add_argument("-s", "--startup-script",
                         help="script to run before the prompt")
-    parser.add_argument("--debug",
+    parser.add_argument("-d", "--debug",
                         action="store_true",
                         help="print debug info")
     return parser.parse_args(argv)
