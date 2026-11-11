@@ -34,6 +34,7 @@ def main(argv=None):
     ctx = repl.Context()
 
     # first and foremost handle the vfs init
+    # and wire it into the context
     if args.vfs_path:
         try:
             ctx.vfs = load_vfs(args.vfs_path)
@@ -41,7 +42,7 @@ def main(argv=None):
             print(f"emulator: {e}")
             return 1
 
-    # running a script
+    # run startup script
     if args.startup_script:
         try:
             code = run_script(args.startup_script, ctx)

@@ -9,6 +9,7 @@ def run(args, ctx):
     With no path, lists the current directory. With several directories,
     each listing gets a heading.
     """
+
     long_format = False
     paths = []
     for arg in args:

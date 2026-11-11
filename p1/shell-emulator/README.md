@@ -1,4 +1,4 @@
-# Terminal shell written in python
+# Termial shell written in python
 
 A modular shell composed of python modules to showcase how a shell works.
 
@@ -20,8 +20,9 @@ This starts an interactive prompt. Type `exit` (or press Ctrl-D) to quit.
 
 | Option                  | Meaning                                       |
 |---|---|
-| `--vfs-path FILE`       | load a virtual file system from a JSON file   |
-| `--startup-script FILE` | run a `.emu` script before the prompt appears |
+| `-v/--vfs-path FILE`       | load a virtual file system from a JSON file   |
+| `-s/--startup-script FILE` | run a `.emu` script before the prompt appears |
+| `-d/--debug`               | print debug info                              |
 
 Example with a sample file system:
 
@@ -44,8 +45,6 @@ A `.emu` file holds one command per line. Blank lines and lines starting with `#
 - The first error stops the script and the shell exits with code 1.
 - An `exit N` line ends the script with code N, and the interactive prompt does not start.
 - If the script finishes without an error or an exit, the interactive prompt starts.
-
-Error examples are in `scripts/startup/errors/`.
 
 
 ### Debug output

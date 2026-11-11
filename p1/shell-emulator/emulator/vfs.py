@@ -37,8 +37,10 @@ class VFS:
 
     def normalize(self, cwd, path):
         """Return the absolute path, with . and .. handled."""
+
         if not path.startswith("/"):
             path = cwd + "/" + path
+
         parts = []
         for part in path.split("/"):
             if part in ("", "."):
@@ -48,6 +50,7 @@ class VFS:
                     parts.pop()
             else:
                 parts.append(part)
+
         return "/" + "/".join(parts)
 
     def resolve(self, cwd, path):
@@ -55,6 +58,7 @@ class VFS:
         Return the node at path, or raise VFSError
         if it cannot be reached.
         """
+
         node = self.root
         for part in self.normalize(cwd, path).split("/"):
             if not part:
